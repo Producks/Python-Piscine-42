@@ -1,2 +1,8 @@
 python3.10 -m venv env
 source env/bin/activate
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+deactivate
+
+https://peps.python.org/pep-0008/
