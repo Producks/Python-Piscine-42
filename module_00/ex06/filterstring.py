@@ -1,18 +1,20 @@
+from ft_filter import ft_filter
 import sys
 
-def check_even(number):
-    if number % 2 == 0:
-          return True  
-    return False
 
-def ft_filter(func: any, object: any):
-    '''filter(function or None, iterable) --> filter object
-
-Return an iterator yielding those items of iterable for which function(item)
-is true. If function is None, return the items that are true.'''
-    return print(filter.__doc__)
+def main(argv):
+    if len(argv) != 3:
+        print("AssertionError wrong number of arguments")
+        return 1
+    try:
+        num = int(argv[2])
+    except ValueError:
+        print("AssertionError argument wasn't a number")
+        return 1
+    ft_list = argv[1].split(" ")
+    iterator = ft_filter(lambda str: len(str) > num, ft_list)
+    for str in iterator:
+        print(str)
 
 if __name__ == "__main__":
-    ft_list = ["BOZO", ".", "com"]
-    ft_filter()
-    print(filter.__doc__)
+    main(sys.argv)
